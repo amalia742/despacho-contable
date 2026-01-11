@@ -1,0 +1,48 @@
+########################
+# SISTEMA / EDITORES
+########################
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log
+
+########################
+# ENV / SECRETOS
+########################
+.env
+.env.*
+!.env.example
+
+########################
+# FRONTEND (Vite / Node)
+########################
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.vite/
+frontend/.cache/
+
+########################
+# BACKEND (Node / Sequelize)
+########################
+backend/node_modules/
+backend/coverage/
+backend/tmp/
+backend/.cache/
+
+########################
+# DATABASE / LOCAL FILES
+########################
+*.sqlite
+*.db
+
+########################
+# SWAP / BACKUPS
+########################
+*.swp
+*.bak
+*.old
+
+tools/
+
