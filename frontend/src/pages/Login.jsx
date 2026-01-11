@@ -11,9 +11,10 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
+console.log(import.meta.env.VITE_API_URL);
 
     try {
-      const res = await axios.post("http://localhost:3000/auth/login", {
+      const res = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {
         correo,
         password,
       });
