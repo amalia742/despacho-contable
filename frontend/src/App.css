@@ -1,0 +1,837 @@
+/* ===== PALETA 1 ===== */
+:root {
+  --color-azul: #0d47a1;
+  --color-azul-claro: #5472d3;
+  --color-gris: #f5f5f5;
+  --color-blanco: #ffffff;
+  --color-negro: #000000;
+}
+
+
+
+/* ===== ESTRUCTURA GENERAL ===== */
+.home-container {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--color-gris);
+  min-height: 100vh;
+}
+
+.header {
+  background: var(--color-negro);
+  color: var(--color-blanco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 40px;
+}
+
+.header-logo {
+  width: 160px;      /* Aumenta el ancho */
+  height: auto;      /* Mantiene proporción */
+  filter: brightness(1.3); /* Más claro */
+  margin-left: 20px;
+}
+
+
+
+/* ===== CONTENIDO CENTRAL ===== */
+.home-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 60px;
+}
+
+
+
+/* ===== COLUMNA IZQUIERDA ===== */
+.left-box {
+  width: 70%;
+  background: var(--color-blanco);
+  padding: 30px;
+  border-radius: 12px;
+  border: 3px solid var(--color-azul);
+}
+
+.section-title {
+  color: var(--color-azul);
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.section-text {
+  color: #1a237e;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+
+
+/* ===== COLUMNA DERECHA ===== */
+.right-box {
+  width: 28%;
+  text-align: center;
+  padding: 30px;
+}
+
+.welcome-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--color-azul);
+}
+
+.welcome-sub {
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.btn-admin {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: var(--color-azul);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-contador {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #2e7d32;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-cita {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: 2px solid var(--color-azul);
+  border-radius: 8px;
+  background: rgb(8, 38, 235);
+  cursor: pointer;
+}
+
+.client-text {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #ddd;
+  margin: 25px 0;
+}
+
+.social-title {
+  margin-top: 40px;
+  font-size: 18px;
+  color: var(--color-azul);
+}
+
+.agendar-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.agendar-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+.agendar-subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #444;
+}
+
+.agendar-form label {
+  font-weight: bold;
+  color: #1d3557;
+  margin-top: 12px;
+  display: block;
+}
+
+.agendar-form input,
+.agendar-form textarea,
+.agendar-form select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #bfc3c7;
+  border-radius: 8px;
+  margin-top: 4px;
+  font-size: 15px;
+}
+
+.error {
+  color: #e63946;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.btn-agendar {
+  width: 100%;
+  padding: 12px;
+  margin-top: 20px;
+  background: #1d3557;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-agendar:hover {
+  background: #2a4c7a;
+}
+
+.floating-login-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #004aad;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.floating-login-btn:hover {
+  background-color: #00337a;
+  transform: scale(1.05);
+}
+
+/* Fondo oscuro difuminado del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Caja del modal */
+.modal-content {
+  background: white;
+  width: 380px;
+  padding: 35px;
+  border-radius: 14px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  animation: scaleIn 0.25s ease;
+}
+
+/* Botón cerrar */
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-close:hover {
+  color: red;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.75); }
+  to { transform: scale(1); }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-container {
+  background: #fff;
+  width: 420px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: #d63031;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.modal-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.modal-form .input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-btn {
+  width: 100%;
+  background: #0984e3;
+  border: none;
+  padding: 12px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.mensaje {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #2d3436;
+  font-weight: bold;
+}
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Cerrar Modal */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Formulario */
+.form-cita input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.btn-submit-cita {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: bold;
+}
+
+.btn-submit-cita:hover {
+  background-color: #1e7e34;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Botón flotante para agendar cita */
+.floating-cita-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 80px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floating-cita-btn:hover {
+  background-color: #1e7e34;
+}
+.card .table thead th {
+  border-bottom: none;
+}
+.table-hover tbody tr:hover {
+  background: rgba(0,0,0,0.03);
+}
+.modal-backdrop { display: none; } /* porque simulamos backdrop */
+/* ===== ESTILO PROFESIONAL CONTABLE ===== */
+
+.card-cliente {
+  max-width: 900px;
+  margin: auto;
+  border-radius: 14px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.card-cliente h5 {
+  color: #0d6efd;
+  font-weight: 700;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 10px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.form-control,
+.form-select {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  transition: all 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-guardar {
+  background: linear-gradient(135deg, #0d6efd, #084298);
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 600;
+}
+
+.btn-guardar:hover {
+  background: linear-gradient(135deg, #084298, #052c65);
+}
+
+.badge-activo {
+  background: #198754;
+}
+
+.badge-inactivo {
+  background: #dc3545;
+}
+/* ===== BUSCADOR PROFESIONAL ===== */
+
+.buscador-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px 25px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+  border-left: 6px solid #0d6efd;
+}
+
+.buscador-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.buscador-icon {
+  font-size: 1.3rem;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.input-icon input,
+.input-icon select {
+  padding-left: 42px;
+}
+
+.buscador-divider {
+  height: 1px;
+  background: #e9ecef;
+  margin: 15px 0;
+}
+/* ===== FILTRO DE CLIENTES PROFESIONAL ===== */
+
+.card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #0d6efd;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.card input,
+.card select {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.card input::placeholder {
+  color: #adb5bd;
+}
+
+.card input:focus,
+.card select:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+
+.card select {
+  background-color: #f8f9fa;
+  cursor: pointer;
+}
+/* ===== CONTENEDOR GENERAL ===== */
+body {
+  background: #f4f6f9;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+ /*===Tarjetaas===*/
+ .card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 25px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  border-left: 6px solid #0d6efd;
+}
+.card h3 {
+  color: #0d6efd;
+  font-weight: 700;
+  margin-bottom: 18px;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 8px;
+}
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.acciones {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.acciones button:first-child {
+  background: #dc3545;
+  color: white;
+}
+
+.acciones button:last-child {
+  background: #198754;
+  color: white;
+}
+
+.acciones button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+thead {
+  background: #0d6efd;
+  color: white;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+th {
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #e9ecef;
+}
+
+tbody tr:hover {
+  background: #f1f5ff;
+}
+td:nth-child(5) {
+  font-weight: 700;
+}
+
+td:nth-child(5):contains("activo") {
+  color: #198754;
+}
+
+td:nth-child(5):contains("inactivo") {
+  color: #dc3545;
+}
+td button {
+  background: transparent;
+  font-size: 1rem;
+  padding: 4px 8px;
+}
+
+td button:first-child {
+  color: #0d6efd;
+}
+
+td button:last-child {
+  color: #dc3545;
+}
+
+td button:hover {
+  transform: scale(1.15);
+}
+input,
+select {
+  border-radius: 10px;
+  border: 1px solid #ced4da;
+  padding: 8px 12px;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+}
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.paginacion button {
+  background: #0d6efd;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 8px;
+}
+
+.paginacion button:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+}
+.card {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.filtro-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+input, select {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 8px 12px;
+  margin-right: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #1e40af;
+  color: #fff;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f1f5f9;
+}
+
+.paginacion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+/* ===============================
+   🔥 MODALES GRANDES (ADMIN)
+   =============================== */
+
+/* Overlay full screen */
+.modal-fullscreen-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del modal */
+.modal-fullscreen {
+  width: 95%;
+  max-width: 1200px;
+  max-height: 92vh;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fijo */
+.modal-fullscreen-header {
+  padding: 18px 24px;
+  background: #0d47a1;
+  color: white;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Body con scroll */
+.modal-fullscreen-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  background: #f8f9fb;
+}
+
+/* Botón cerrar */
+.modal-fullscreen-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}

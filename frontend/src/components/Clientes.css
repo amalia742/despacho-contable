@@ -1,0 +1,115 @@
+/* ===============================
+   TARJETA DE FILTROS
+================================ */
+.filtro-card {
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+/* ===============================
+   ESTADOS
+================================ */
+.estado-activo {
+  color: #155724;
+  background-color: #d4edda;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.estado-inactivo {
+  color: #721c24;
+  background-color: #f8d7da;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* ===============================
+   TABLA
+================================ */
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+/* ===============================
+   RESALTADO TEMPORAL
+================================ */
+.resaltado {
+  animation: destacar 2s ease;
+}
+
+@keyframes destacar {
+  0% { background-color: #fff3cd; }
+  100% { background-color: transparent; }
+}
+
+/* =====================================================
+   🔥 MODAL / FORMULARIO CLIENTE (FIX REAL)
+===================================================== */
+
+/* Contenedor flotante */
+.modal-cliente,
+.modal.show.d-block {
+  position: fixed !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  z-index: 99999 !important;
+}
+
+/* Caja del formulario */
+.modal-dialog {
+  width: 95% !important;
+  max-width: 900px !important;
+  margin: 0 !important;
+}
+
+/* Contenido */
+.modal-content {
+  border-radius: 10px;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+/* Scroll SOLO interno */
+.modal-body {
+  overflow-y: auto;
+  max-height: calc(90vh - 120px);
+}
+
+/* =====================================================
+   ASEGURA QUE EL LAYOUT QUEDE DEBAJO
+===================================================== */
+.home-admin-container,
+.content-area,
+.sidebar,
+.navbar,
+.menu-bar,
+.options-menu {
+  position: relative;
+  z-index: 1;
+}
+/* ===== PERMITIR MODALES A PANTALLA COMPLETA ===== */
+.home-admin-container,
+.content-area {
+  overflow: visible !important;
+}
+
+/* Sidebar debajo del modal */
+.sidebar {
+  z-index: 1000;
+}
+
+/* Modal siempre arriba de TODO */
+.modal,
+.modal.show,
+.modal-backdrop,
+.modal-overlay {
+  z-index: 99999 !important;
+}

@@ -1,0 +1,67 @@
+.facturas-container {
+  padding: 20px;
+}
+
+.form-factura {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.form-factura input,
+.form-factura select,
+.form-factura textarea {
+  padding: 8px;
+  border: 1px solid #8e2828d6;
+  border-radius: 4px;
+}
+
+.form-factura textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+.form-factura button {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-factura button:hover {
+  background: #084298;
+}
+
+.buscador {
+  padding: 8px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.excel-btn {
+  background: #198754;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.tabla-facturas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-facturas th,
+.tabla-facturas td {
+  border: 1px solid #0834c5;
+  padding: 8px;
+}
+
+.tabla-facturas th {
+  background: #1258c9;
+}

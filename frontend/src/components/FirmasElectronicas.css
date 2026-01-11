@@ -1,0 +1,123 @@
+.firmas-container {
+  padding: 20px;
+}
+
+.firmas-header {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.firmas-header input,
+.firmas-header select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-nueva {
+  background: #0d6efd;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.tabla-firmas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabla-firmas th {
+  background: #222;
+  color: white;
+  padding: 10px;
+}
+
+.tabla-firmas td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.estado {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.estado.vigente { background: #d1e7dd; color: #0f5132; }
+.estado.por\ vencer { background: #fff3cd; color: #664d03; }
+.estado.vencida { background: #f8d7da; color: #842029; }
+
+.modal-firma {
+  position: fixed;
+  top: 80px;
+  left: 20px;
+  width: 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}
+
+.modal-firma input,
+.modal-firma select,
+.modal-firma textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
+.fechas {
+  display: flex;
+  gap: 5px;
+}
+
+.btn-guardar {
+  background: #198754;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  border: none;
+  margin-bottom: 5px;
+}
+
+.btn-cancelar {
+  background: #6c757d;
+  color: white;
+  padding: 8px;
+  width: 100%;
+  border: none;
+}
+.estado {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.estado.vigente {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.estado.por-vencer {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.estado.vencida {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+.vigente {
+  background-color: #e8f5e9;
+}
+
+.por.vencer {
+  background-color: #fffde7;
+}
+
+.vencida {
+  background-color: #fdecea;
+}

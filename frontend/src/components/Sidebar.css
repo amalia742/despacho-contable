@@ -1,0 +1,32 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background: #0d6efd;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar-title {
+  margin-bottom: 30px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 18px 0;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
