@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.addColumn('Citas', 'estado', {
+    await queryInterface.addColumn('citas', 'estado', {
       type: Sequelize.STRING,
       allowNull: false,
       defaultValue: 'pendiente'
@@ -9,6 +9,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.removeColumn('Citas', 'estado');
+    await queryInterface.removeColumn('citas', 'estado');
   }
 };
