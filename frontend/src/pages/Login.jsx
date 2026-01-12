@@ -2,42 +2,63 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-export default function Login() {
-  const navigate = useNavigate();
+const Login = () => {
   const [correo, setCorreo] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
 
     try {
-      const res = await axios.post("/api/auth/login", {
-        correo,
-        password,
-      });
+      // 🔴 LOGIN ADMIN (NO SE TOCA)
+      const response = await axios.post(
+        "/api/admin/login",
+        { correo, password }
+      );
 
-      // Guardar token y rol
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("rol", res.data.rol);
+      localStorage.setItem("token", response.data.token);
+      localStorage.setItem("rol", "admin");
+      localStorage.setItem("usuario", JSON.stringify(response.data.admin));
 
-      // Entrar al panel
       navigate("/admin");
     } catch {
-      setError("Correo o contraseña incorrectos");
+      try {
+        // ✅ LOGIN EMPLEADO
+        const responseEmpleado = await axios.post(
+          "http://localhost:3000/api/empleados/login",
+          { correo, password }
+        );
+
+        localStorage.setItem("token", responseEmpleado.data.token);
+        localStorage.setItem("rol", "empleado");
+        localStorage.setItem(
+          "usuario",
+          JSON.stringify(responseEmpleado.data.empleado)
+        );
+
+        navigate("/admin");
+      } catch (errorEmpleado) {
+        setError(
+          errorEmpleado.response?.data?.message ||
+            "Credenciales incorrectas"
+        );
+      }
     }
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="mb-3 text-center">Ingresar</h2>
+    <div className="login-container">
+      <h2>Login</h2>
 
-      <form onSubmit={handleSubmit} className="card p-4 shadow">
+      {error && <p style={{ color: "red" }}>{error}</p>}
+
+      <form onSubmit={handleSubmit}>
         <input
           type="email"
           placeholder="Correo"
-          className="form-control mb-3"
           value={correo}
           onChange={(e) => setCorreo(e.target.value)}
           required
@@ -46,22 +67,15 @@ export default function Login() {
         <input
           type="password"
           placeholder="Contraseña"
-          className="form-control mb-3"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
 
-        {error && (
-          <div className="alert alert-danger text-center">
-            {error}
-          </div>
-        )}
-
-        <button type="submit" className="btn btn-primary w-100">
-          Ingresar
-        </button>
+        <button type="submit">Ingresar</button>
       </form>
     </div>
   );
-}
+};
+
+export default Login;
